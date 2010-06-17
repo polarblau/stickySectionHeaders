@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css" media="screen">
+		
+		* { margin: 0; padding: 0; }
+		
+		body {
+			font-family: Helvetica;
+			font-size: 67.5%;
+			color: #222;
+			padding: 50px;
+		}
+		
+		ul { 
+			list-style: none; 
+			margin: 0;
+		}
+		
+		#container  {
+			height: 300px;
+			width: 250px;
+			overflow: hidden;
+			position: relative;
+			float: left;
+		}
+		
+		ul.sections {
+			height: 100%;
+			overflow: auto;
+		}
+		
+		ul.sections > li strong {
+			font-size: 1.5em;
+			color: #222;
+			background: #ccc;
+			display: block;
+			padding: 1em 10px;
+			opacity: .75;
+		}
+		
+		ul.sections > li.sticky strong {
+			position: absolute;
+			top: 0;
+		}
+		
+		ul.sections ul li {
+			padding: 1em 10px;
+			border-bottom: 1px solid #ccc;
+		}
+		
+		ul.sections .ui-selecting { background: #FECA40; }
+		ul.sections .ui-selected { background: #F39814; color: white; }
+		
+	</style>
+	
+	<script type="text/javascript" charset="utf-8">
+	
+		$.fn.stickySectionHeaders = function(options) {
+			
+			var settings = $.extend({
+				stickyClass: 'sticky',
+				headlineSelector: 'strong'
+			},
+			options);
+
+			return $(this).each(function() {
+				var $this = $(this);
+				$this.find('ul:first').scroll(function(e) {
+					$this.find('ul:first > li').each(function() {
+						var t = $(this).position().top;
+						var h = $(this).outerHeight();
+						var $s = $(this).find(settings.headlineSelector);
+						var sh = $s.outerHeight();
+						if (t < 0) {
+							$(this).addClass(settings.stickyClass).css('paddingTop', sh);
+							$s.css({
+								'width': $(this).outerWidth() - $s.cssSum('paddingLeft', 'paddingRight'),
+								'top': (h + t < sh) ? (sh - (t + h)) * -1 : ''
+							});
+						} else $(this).removeClass(settings.stickyClass).css('paddingTop', '');
+					});
+				});
+			});
+		};
+
+		$.fn.cssSum = function() {
+			var $self = $(this), sum = 0;
+			$(arguments).each(function(i, e) {
+				sum += parseInt($self.css(e), 10);
+			});
+			return sum;
+		};
+
+		$(function() {
+			$('#container').stickySectionHeaders();
+		});
+
+	</script>
+	
+	<title>List with sticky header</title>
+	
+</head>
+
+<body>
+	<div id="container">
+		<ul class="sections">
+			<li>
+				<strong>Section Headline 1</strong>
+				<ul>
+					<li id="id-1">Content line</li>
+					<li id="id-2">Content line</li>
+					<li id="id-3">Content line</li>
+					<li id="id-4">Content line</li>
+				</ul>
+			</li>
+			<li>
+				<strong>Section Headline 2</strong>
+				<ul>
+					<li id="id-5">Content line</li>
+					<li id="id-6">Content line</li>
+				</ul>
+			</li>
+			<li>
+				<strong>Section Headline 3</strong>
+				<ul>
+					<li id="id-7">Content line</li>
+					<li id="id-8">Content line</li>
+					<li id="id-9">Content line</li>
+					<li id="id-10">Content line</li>
+					<li id="id-11">Content line</li>
+					<li id="id-12">Content line</li>
+					<li id="id-13">Content line</li>
+				</ul>
+			</li>
+			<li>
+				<strong>Section Headline 4</strong>
+				<ul>
+					<li id="id-14">Content line</li>
+					<li id="id-15">Content line</li>
+					<li id="id-16">Content line</li>
+					<li id="id-17">Content line</li>
+				</ul>
+			</li>
+		</ul>          
+	</div>
+	<div id="target"></div>
+</body>
+</html>
