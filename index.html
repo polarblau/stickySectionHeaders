@@ -5,6 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery.stickysectionheaders.js" type="text/javascript" charset="utf-8"></script>
 	<style type="text/css" media="screen">
 		
 		* { margin: 0; padding: 0; }
@@ -53,49 +54,10 @@
 			border-bottom: 1px solid #ccc;
 		}
 		
-		ul.sections .ui-selecting { background: #FECA40; }
-		ul.sections .ui-selected { background: #F39814; color: white; }
-		
 	</style>
 	
 	<script type="text/javascript" charset="utf-8">
-	
-		$.fn.stickySectionHeaders = function(options) {
-			
-			var settings = $.extend({
-				stickyClass: 'sticky',
-				headlineSelector: 'strong'
-			},
-			options);
-
-			return $(this).each(function() {
-				var $this = $(this);
-				$this.find('ul:first').scroll(function(e) {
-					$this.find('ul:first > li').each(function() {
-						var t = $(this).position().top;
-						var h = $(this).outerHeight();
-						var $s = $(this).find(settings.headlineSelector);
-						var sh = $s.outerHeight();
-						if (t < 0) {
-							$(this).addClass(settings.stickyClass).css('paddingTop', sh);
-							$s.css({
-								'width': $(this).outerWidth() - $s.cssSum('paddingLeft', 'paddingRight'),
-								'top': (h + t < sh) ? (sh - (t + h)) * -1 : ''
-							});
-						} else $(this).removeClass(settings.stickyClass).css('paddingTop', '');
-					});
-				});
-			});
-		};
-
-		$.fn.cssSum = function() {
-			var $self = $(this), sum = 0;
-			$(arguments).each(function(i, e) {
-				sum += parseInt($self.css(e), 10);
-			});
-			return sum;
-		};
-
+		
 		$(function() {
 			$('#container').stickySectionHeaders();
 		});
