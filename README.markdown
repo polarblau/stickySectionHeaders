@@ -6,7 +6,7 @@ Basic options
 $('#container').stickySectionHeaders();
 ```
 
-Check out the [demo here](http://www.polarblau.com/code/jquery/stickysectionheaders).
+Check out the [demo here](https://polarblau.github.com/stickySectionHeaders).
   
 Settings and defaults
 
