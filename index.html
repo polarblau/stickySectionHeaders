@@ -1,114 +1,238 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
-	<script src="jquery.stickysectionheaders.js" type="text/javascript" charset="utf-8"></script>
-	<style type="text/css" media="screen">
-		
-		* { margin: 0; padding: 0; }
-		
-		body {
-			font-family: Helvetica;
-			font-size: 67.5%;
-			color: #222;
-			padding: 50px;
-		}
-		
-		ul { 
-			list-style: none; 
-			margin: 0;
-		}
-		
-		#container  {
-			height: 300px;
-			width: 250px;
-			overflow: hidden;
-			position: relative;
-			float: left;
-		}
-		
-		ul.sections {
-			height: 100%;
-			overflow: auto;
-		}
-		
-		ul.sections > li strong {
-			font-size: 1.5em;
-			color: #222;
-			background: #ccc;
-			display: block;
-			padding: 1em 10px;
-			opacity: .75;
-		}
-		
-		ul.sections > li.sticky strong {
-			position: absolute;
-			top: 0;
-		}
-		
-		ul.sections ul li {
-			padding: 1em 10px;
-			border-bottom: 1px solid #ccc;
-		}
-		
-	</style>
-	
-	<script type="text/javascript" charset="utf-8">
-		
-		$(function() {
-			$('#container').stickySectionHeaders();
-		});
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>jQuery.stickysectionheaders plugin</title>
+  <meta name="description" content="jQuery sticky section headers plugin">
+  <meta name="author" content="Florian Plank, http://polarblau.com">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="stylesheets/style.css" charset="utf-8" />
 
-	</script>
-	
-	<title>List with sticky header</title>
-	
+  <style>
+  
+    ul { 
+      list-style: none; 
+      margin: 0;
+      padding: 0;
+    }
+    
+    #sticky-list  {
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    ul.sections {
+      height: 100%;
+      overflow: auto;
+    }
+    
+    ul.sections > li strong {
+      font-size: 1.5em;
+      color: #222;
+      background: #ccc;
+      display: block;
+      padding: 0.5em 10px;
+      color: #fff;
+      text-shadow: 0px -1px 0px #000;
+      opacity: .75;
+      background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #646262),
+        color-stop(0.5, #484848),
+        color-stop(0.5, #3D3D3D),
+        color-stop(1, #4C4C4C)
+      );
+      background-image: -moz-linear-gradient(
+        center top,
+        #646262 0%,
+        #484848 50%,
+        #3D3D3D 50%,
+        #4C4C4C 100%
+      );
+      background-image: linear-gradient(
+        center top,
+        #646262 0%,
+        #484848 50%,
+        #3D3D3D 50%,
+        #4C4C4C 100%
+      );
+    }
+    
+    ul.sections > li.sticky strong {
+      position: absolute;
+      top: 0;
+      
+    }
+    
+    ul.sections ul li {
+      padding: 1em 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    
+  </style>
+  
+  <link rel="stylesheet" href="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.css"> 
+  <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
+  
 </head>
 
-<body>
-	<div id="container">
-		<ul class="sections">
-			<li>
-				<strong>Section Headline 1</strong>
-				<ul>
-					<li id="id-1">Content line</li>
-					<li id="id-2">Content line</li>
-					<li id="id-3">Content line</li>
-					<li id="id-4">Content line</li>
-				</ul>
-			</li>
-			<li>
-				<strong>Section Headline 2</strong>
-				<ul>
-					<li id="id-5">Content line</li>
-					<li id="id-6">Content line</li>
-				</ul>
-			</li>
-			<li>
-				<strong>Section Headline 3</strong>
-				<ul>
-					<li id="id-7">Content line</li>
-					<li id="id-8">Content line</li>
-					<li id="id-9">Content line</li>
-					<li id="id-10">Content line</li>
-					<li id="id-11">Content line</li>
-					<li id="id-12">Content line</li>
-					<li id="id-13">Content line</li>
-				</ul>
-			</li>
-			<li>
-				<strong>Section Headline 4</strong>
-				<ul>
-					<li id="id-14">Content line</li>
-					<li id="id-15">Content line</li>
-					<li id="id-16">Content line</li>
-					<li id="id-17">Content line</li>
-				</ul>
-			</li>
-		</ul>          
-	</div>
+<body onload="prettyPrint()">
+  <div class="container">
+    
+    <a class="ribbon" href="https://github.com/polarblau/stickySectionHeaders" target="_blank">
+      <img src="https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub">
+    </a>
+    
+    <header>
+      <h1>jQuery.stickysectionheaders</h1>
+      <p>
+        <a href="https://github.com/polarblau/stickySectionHeaders" title="GitHub repository" target="_blank">jQuery.stickysectionheaders</a> takes a nested list and enables section headings as known from iOS table views. When scrolling down, always the current section heading "sticks" to the top of the list until the next heading "pushes" it out of the viewport.
+      </p>
+    </header>
+ 
+    <div>
+      <h2>Usage</h2>
+      
+      <div>
+        <h3>Markup</h3>
+        <pre class="prettyprint"><code>
+&lt;div id="sticky-list"&gt;
+  &lt;ul class="sections"&gt;
+    &lt;li&gt;
+      &lt;strong&gt;Section Headline 1&lt;/strong&gt;
+      &lt;ul&gt;
+        &lt;li id="id-1"&gt;Content line&lt;/li&gt;
+        &lt;li id="id-2"&gt;Content line&lt;/li&gt;
+        &lt;li id="id-3"&gt;Content line&lt;/li&gt;
+        &lt;li id="id-4"&gt;Content line&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;strong&gt;Section Headline 2&lt;/strong&gt;
+      &lt;ul&gt;
+        &lt;li id="id-5"&gt;Content line&lt;/li&gt;
+        &lt;li id="id-6"&gt;Content line&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;strong&gt;Section Headline 4&lt;/strong&gt;
+      &lt;ul&gt;
+        &lt;li id="id-14"&gt;Content line&lt;/li&gt;
+        &lt;li id="id-15"&gt;Content line&lt;/li&gt;
+        &lt;li id="id-16"&gt;Content line&lt;/li&gt;
+        &lt;li id="id-17"&gt;Content line&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;          
+&lt;/div&gt;
+        </code></pre>
+      </div>
+      
+      <div>
+        <h3>Javascript</h3>
+        <pre class="prettyprint"><code>
+$('#sticky-list').stickySectionHeaders({
+  stickyClass     : 'sticky',
+  headlineSelector: 'strong'
+});
+        </code></pre>
+      </div>
+      
+      <div>
+        <h3><strong>Demo</strong></h3>
+        <div id="sticky-list">
+          <ul class="sections">
+            <li>
+              <strong>Section Headline 1</strong>
+              <ul>
+                <li id="id-1">Content line</li>
+                <li id="id-2">Content line</li>
+                <li id="id-3">Content line</li>
+                <li id="id-4">Content line</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Section Headline 2</strong>
+              <ul>
+                <li id="id-5">Content line</li>
+                <li id="id-6">Content line</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Section Headline 3</strong>
+              <ul>
+                <li id="id-7">Content line</li>
+                <li id="id-8">Content line</li>
+                <li id="id-9">Content line</li>
+                <li id="id-10">Content line</li>
+                <li id="id-11">Content line</li>
+                <li id="id-12">Content line</li>
+                <li id="id-13">Content line</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Section Headline 4</strong>
+              <ul>
+                <li id="id-14">Content line</li>
+                <li id="id-15">Content line</li>
+                <li id="id-16">Content line</li>
+                <li id="id-17">Content line</li>
+              </ul>
+            </li>
+          </ul>          
+        </div>
+      </div>
+      
+    </div>
+    
+    <hr />
+
+    <div>
+      <h2>License</h2>
+      <p>
+        Copyright (c) 2011 Florian Plank (http://www.polarblau.com/). 
+        <br />
+        Dual licensed under the MIT (MIT-LICENSE.txt)
+        and GPL (GPL-LICENSE.txt) licenses.
+    </div>
+    
+    <hr />
+    
+    <div id="download">
+      <h2>Download the source</h2>
+      <a href="https://github.com/polarblau/stickySectionHeaders/zipball/master" title="Download">
+        <img src="images/zip.png" width="60" height="78" alt="ZIP icon" /> 
+      </a>
+      <a href="https://github.com/polarblau/stickySectionHeaders/tarball/master" title="Download">
+        <img src="images/tar.png" width="60" height="78" alt="ZIP icon" /> 
+      </a>
+    </div>
+    
+  </div>
+  
+  <footer>
+    <a href="http://polarblau.com" title="Polarblau">
+      <img src="images/logo.png" width="135" height="65" alt="Polarblau logo" />
+    </a>
+  </footer>
+
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script src="https://github.com/polarblau/stickySectionHeaders/raw/master/jquery.stickysectionheaders.js"></script>
+  <script>
+    $(function(){
+      $('#sticky-list').stickySectionHeaders();
+    });
+  </script>
+  
+  
+  
 </body>
 </html>
