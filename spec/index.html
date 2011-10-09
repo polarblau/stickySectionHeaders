@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jasmine Test Runner</title>
+        <link rel="stylesheet" type="text/css" href="../lib/jasmine-1.1.0/jasmine.css">
+        <script type="text/javascript" src="../lib/jasmine-1.1.0/jasmine.js"></script>
+        <script type="text/javascript" src="../lib/jasmine-1.1.0/jasmine-html.js"></script>
+
+        <script src="http://code.jquery.com/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="stickysectionheaders_spec.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../src/jquery.stickysectionheaders.js" type="text/javascript" charset="utf-8"></script>
+        
+        <style>
+          ul { 
+            list-style: none; 
+            margin: 0;
+            padding: 0;
+          }
+
+          #sticky-list  {
+            height: 100px;
+            overflow: hidden;
+            position: relative;
+          }
+
+          #sticky-list > ul {
+            height: 100%;
+            overflow: auto;
+          }
+
+          #sticky-list > ul > li strong {
+            display: block;
+          }
+
+          #sticky-list > ul > li.sticky strong {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+          }
+        </style>
+        
+    </head>
+    <body>
+
+        <script type="text/javascript">
+            jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+            jasmine.getEnv().execute();
+        </script>
+
+    </body>
+</html>
