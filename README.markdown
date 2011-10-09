@@ -50,3 +50,40 @@ Requires basic HTML structure
   </ul>          
 </div>
 ```
+
+And some simple CSS to 
+
+```css
+/* Reset some list defaults for all lists */        
+ul { 
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+}
+
+/* The main container */
+#sticky-list  {
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* The main list */
+#sticky-list > ul {
+  height: 100%;
+  overflow: auto;
+}
+
+/* Section headers, defined through "headlineSelector" */
+#sticky-list > ul > li strong {
+  display: block;
+}
+
+/* Section headers when "sticky", defined through "stickyClass" */
+#sticky-list > ul > li.sticky strong {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+```
