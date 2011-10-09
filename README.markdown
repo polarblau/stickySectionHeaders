@@ -3,7 +3,7 @@
 ### Basic options
   
 ```javascript
-$('#container').stickySectionHeaders();
+$('#sticky-list').stickySectionHeaders();
 ```
 
 Check out the [demo here](http://polarblau.github.com/stickySectionHeaders/).
@@ -11,7 +11,7 @@ Check out the [demo here](http://polarblau.github.com/stickySectionHeaders/).
 ### Settings and defaults
 
 ```javascript
-$('#container').stickySectionHeaders({
+$('#sticky-list').stickySectionHeaders({
   stickyClass      : 'sticky',
   headlineSelector : 'strong'
 });
