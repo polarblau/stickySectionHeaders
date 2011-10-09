@@ -1,7 +1,7 @@
 /*!
  * Sticky Section Headers
  *
- * Copyright (c) 2010 Florian Plank (http://www.polarblau.com/)
+ * Copyright (c) 2011 Florian Plank (http://www.polarblau.com/)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
  * and GPL (GPL-LICENSE.txt) licenses.
  *
