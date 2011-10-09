@@ -1,6 +1,6 @@
 # Usage
 
-Basic options
+## Basic options
   
 ```javascript
 $('#container').stickySectionHeaders();
@@ -8,7 +8,7 @@ $('#container').stickySectionHeaders();
 
 Check out the [demo here](http://polarblau.github.com/stickySectionHeaders/).
   
-Settings and defaults
+## Settings and defaults
 
 ```javascript
 $('#container').stickySectionHeaders({
@@ -17,7 +17,7 @@ $('#container').stickySectionHeaders({
 });
 ```
 
-Requires basic HTML structure
+## HTML
 
 ```html
 <div id="container">
@@ -51,7 +51,7 @@ Requires basic HTML structure
 </div>
 ```
 
-And some simple CSS to 
+## CSS
 
 ```css
 /* Reset some list defaults for all lists */        
