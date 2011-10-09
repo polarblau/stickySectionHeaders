@@ -27,12 +27,12 @@
       position: relative;
     }
     
-    ul.sections {
+    #sticky-list > ul {
       height: 100%;
       overflow: auto;
     }
     
-    ul.sections > li strong {
+    #sticky-list > ul > li strong {
       font-size: 1.5em;
       color: #222;
       background: #ccc;
@@ -66,13 +66,13 @@
       );
     }
     
-    ul.sections > li.sticky strong {
+    #sticky-list > ul > li.sticky strong {
       position: absolute;
       top: 0;
       
     }
     
-    ul.sections ul li {
+    #sticky-list > ul ul li {
       padding: 1em 10px;
       border-bottom: 1px solid #ccc;
     }
@@ -105,30 +105,30 @@
         <h3>Markup</h3>
         <pre class="prettyprint"><code>
 &lt;div id="sticky-list"&gt;
-  &lt;ul class="sections"&gt;
+  &lt;ul&gt;
     &lt;li&gt;
       &lt;strong&gt;Section Headline 1&lt;/strong&gt;
       &lt;ul&gt;
-        &lt;li id="id-1"&gt;Content line&lt;/li&gt;
-        &lt;li id="id-2"&gt;Content line&lt;/li&gt;
-        &lt;li id="id-3"&gt;Content line&lt;/li&gt;
-        &lt;li id="id-4"&gt;Content line&lt;/li&gt;
+        &lt;li&gt;Content line&lt;/li&gt;
+        &lt;li&gt;Content line&lt;/li&gt;
+        &lt;li&gt;Content line&lt;/li&gt;
+        &lt;li&gt;Content line&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/li&gt;
     &lt;li&gt;
       &lt;strong&gt;Section Headline 2&lt;/strong&gt;
       &lt;ul&gt;
-        &lt;li id="id-5"&gt;Content line&lt;/li&gt;
-        &lt;li id="id-6"&gt;Content line&lt;/li&gt;
+        &lt;li&gt;Content line&lt;/li&gt;
+        &lt;li&gt;Content line&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/li&gt;
     &lt;li&gt;
       &lt;strong&gt;Section Headline 4&lt;/strong&gt;
       &lt;ul&gt;
-        &lt;li id="id-14"&gt;Content line&lt;/li&gt;
-        &lt;li id="id-15"&gt;Content line&lt;/li&gt;
-        &lt;li id="id-16"&gt;Content line&lt;/li&gt;
-        &lt;li id="id-17"&gt;Content line&lt;/li&gt;
+        &lt;li&gt;Content line&lt;/li&gt;
+        &lt;li&gt;Content line&lt;/li&gt;
+        &lt;li&gt;Content line&lt;/li&gt;
+        &lt;li&gt;Content line&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/li&gt;
   &lt;/ul&gt;          
@@ -149,42 +149,42 @@ $('#sticky-list').stickySectionHeaders({
       <div>
         <h3><strong>Demo</strong></h3>
         <div id="sticky-list">
-          <ul class="sections">
+          <ul>
             <li>
               <strong>Section Headline 1</strong>
               <ul>
-                <li id="id-1">Content line</li>
-                <li id="id-2">Content line</li>
-                <li id="id-3">Content line</li>
-                <li id="id-4">Content line</li>
+                <li>Content line</li>
+                <li>Content line</li>
+                <li>Content line</li>
+                <li>Content line</li>
               </ul>
             </li>
             <li>
               <strong>Section Headline 2</strong>
               <ul>
-                <li id="id-5">Content line</li>
-                <li id="id-6">Content line</li>
+                <li>Content line</li>
+                <li>Content line</li>
               </ul>
             </li>
             <li>
               <strong>Section Headline 3</strong>
               <ul>
-                <li id="id-7">Content line</li>
-                <li id="id-8">Content line</li>
-                <li id="id-9">Content line</li>
-                <li id="id-10">Content line</li>
-                <li id="id-11">Content line</li>
-                <li id="id-12">Content line</li>
-                <li id="id-13">Content line</li>
+                <li>Content line</li>
+                <li>Content line</li>
+                <li>Content line</li>
+                <li>Content line</li>
+                <li>Content line</li>
+                <li>Content line</li>
+                <li>Content line</li>
               </ul>
             </li>
             <li>
               <strong>Section Headline 4</strong>
               <ul>
-                <li id="id-14">Content line</li>
-                <li id="id-15">Content line</li>
-                <li id="id-16">Content line</li>
-                <li id="id-17">Content line</li>
+                <li>Content line</li>
+                <li>Content line</li>
+                <li>Content line</li>
+                <li>Content line</li>
               </ul>
             </li>
           </ul>          
@@ -225,7 +225,7 @@ $('#sticky-list').stickySectionHeaders({
   </footer>
 
   <script src="http://code.jquery.com/jquery.min.js"></script>
-  <script src="https://github.com/polarblau/stickySectionHeaders/raw/master/jquery.stickysectionheaders.js"></script>
+  <script src="https://github.com/polarblau/stickySectionHeaders/raw/master/src/jquery.stickysectionheaders.js"></script>
   <script>
     $(function(){
       $('#sticky-list').stickySectionHeaders();
