@@ -20,8 +20,8 @@ $('#container').stickySectionHeaders({
 ### HTML
 
 ```html
-<div id="container">
-  <ul class="sections">
+<div id="sticky-list">
+  <ul>
     <li>
       <strong>Section Headline 1</strong>
       <ul>
