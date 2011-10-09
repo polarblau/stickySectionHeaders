@@ -34,7 +34,10 @@
               
           if (top < 0) {
             $this.addClass(settings.stickyClass).css('paddingTop', headHeight);
-            $head.css('top', (height + top < headHeight) ? (headHeight - (top + height)) * -1 : '' );
+            $head.css({
+              'top'  : (height + top < headHeight) ? (headHeight - (top + height)) * -1 : '',
+              'width': $this.outerWidth() - $head.cssSum('paddingLeft', 'paddingRight')
+            });
           } else {
             $this.removeClass(settings.stickyClass).css('paddingTop', '');
           }
