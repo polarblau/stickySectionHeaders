@@ -68,6 +68,26 @@ td { vertical-align: top; }
 
 body {
   background: url(../images/bg.jpeg);
+  font-size: 1em;
+  line-height: 1.4em;
+  color: #222;
+}
+
+header h1 {
+  position: relative;
+}
+
+header h1 span {
+  font-size: 0.5em;
+  padding: 3px 7px 2px 24px;
+  color: #777;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: transparent url(../images/tag.png) no-repeat 4px center;
+  border: 1px solid #ccc;
+  position: absolute;
+  bottom: -0.25em;
 }
 
 .container { 
@@ -75,20 +95,24 @@ body {
   width: 600px; 
   padding: 40px 60px; 
   border: 1px solid #b4aec8;
-  margin: 40px auto 0.75em;
+  margin: 40px auto 0.5em;
   background: #fff;
   -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.1);
   -moz-box-shadow: 0 0 15px rgba(0,0,0,0.1); 
   box-shadow: 0 0 15px rgba(0,0,0,0.1); 
 }
   
-.container pre,
+.container .container pre,
 .container .prettyprint { 
   padding: 0 20px; 
   border: 1px solid #bab1cc; 
   margin: 0 0 20px; 
-  font-size: 13px; 
+  font-size: 14px; 
   background: #eeecf1;
+}
+
+.container p code {
+  color: #9c8eb7;
 }
 
 .ribbon { 
@@ -122,10 +146,6 @@ header {
   margin-right: 10px;
 }
 
-p {
-  line-height: 1.3em;
-}
-
 p small { 
   color: #666; 
 }
@@ -139,12 +159,17 @@ footer {
   margin-bottom: 2em;
 }
 
-footer p small { 
-  color: #999; 
-}
-
 footer p {
   margin-bottom: 1.5em;
+}
+
+footer p small { 
+  color: #999; 
+  font-size: 0.75em;
+}
+
+footer p small a { 
+  color: #eeecf1;
 }
 
 /* ==|== non-semantic helper classes ======================================== */
