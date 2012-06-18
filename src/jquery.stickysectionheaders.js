@@ -1,12 +1,12 @@
 /*!
  * Sticky Section Headers
  *
- * Copyright (c) 2011 Florian Plank (http://www.polarblau.com/)
+ * Copyright (c) 2012 Florian Plank (http://www.polarblau.com/)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
  * and GPL (GPL-LICENSE.txt) licenses.
  *
  * USAGE:
- * 
+ *
  * $('#container').stickySectionHeaders({
  *   stickyClass      : 'sticky',
  *   headlineSelector : 'strong'
@@ -16,7 +16,7 @@
 
 (function($){
   $.fn.stickySectionHeaders = function(options) {
-  
+
     var settings = $.extend({
       stickyClass     : 'sticky',
       headlineSelector: 'strong'
@@ -31,7 +31,7 @@
               height     = $this.outerHeight(),
               $head      = $this.find(settings.headlineSelector),
               headHeight = $head.outerHeight();
-              
+
           if (top < 0) {
             $this.addClass(settings.stickyClass).css('paddingTop', headHeight);
             $head.css({
@@ -59,5 +59,5 @@
     });
     return sum;
   };
-  
+
 })(jQuery);
