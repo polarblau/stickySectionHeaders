@@ -1,13 +1,13 @@
 ## Usage
 
 ### Basic options
-  
+
 ```javascript
 $('#sticky-list').stickySectionHeaders();
 ```
 
 Check out the [demo here](http://polarblau.github.com/stickySectionHeaders/).
-  
+
 ### Settings and defaults
 
 ```javascript
@@ -47,16 +47,16 @@ $('#sticky-list').stickySectionHeaders({
         <li>Content line</li>
       </ul>
     </li>
-  </ul>          
+  </ul>
 </div>
 ```
 
 ### CSS
 
 ```css
-/* Reset some list defaults for all lists */        
-ul { 
-  list-style: none; 
+/* Reset some list defaults for all lists */
+ul {
+  list-style: none;
   margin: 0;
   padding: 0;
 }
@@ -82,6 +82,6 @@ ul {
 /* Section headers when "sticky", defined through "stickyClass" */
 #sticky-list > ul > li.sticky strong {
   position: absolute;
-  left: 0;
+  top: 0;
 }
 ```
