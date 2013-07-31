@@ -13,13 +13,13 @@ h1 { color: #333; }
 }
 
 /* Reset some list defaults for all lists */
-ul {
+ul, ol {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-ul li {
+li {
   text-indent: 1em;
 }
 
@@ -29,18 +29,19 @@ ul li {
   overflow: hidden;
   position: relative;
 
-  border: thin solid #ccc;
+  border: thin solid #dfdfdf;
   background: white;
 }
 
 /* The main list */
-#sticky-list > ul {
+#sticky-list > ul, #sticky-list > ol {
   height: 100%;
   overflow: auto;
 }
 
 /* Section headers, defined through "headlineSelector" */
-#sticky-list > ul > li strong {
+#sticky-list > ul > li strong,
+#sticky-list > ol > li strong {
   font-weight: normal;
   font-size: 1.1em;
   color: #222;
@@ -56,12 +57,22 @@ ul li {
 }
 
 /* Section headers when "sticky", defined through "stickyClass" */
-#sticky-list > ul > li.sticky strong {
+#sticky-list li.sticky strong {
   position: absolute;
   top: 0;
 }
 
-ul ul li {
+ul ul li,
+ol ol li,
+ul ol li,
+ol ul li {
   padding: 1em 0;
-  border-bottom: thin solid #ddd;
+  border-bottom: thin solid #dfdfdf;
+}
+
+ul ul li:last-child,
+ol ol li:last-child,
+ul ol li:last-child,
+ol ul li:last-child {
+  border-bottom: none;
 }
