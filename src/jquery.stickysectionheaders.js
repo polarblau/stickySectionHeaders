@@ -14,47 +14,60 @@
  *
  */
 
-$.fn.stickySectionHeaders = function(options) {
+(function (factory) {
+  if (typeof define === 'function' && define.amd) {
+      // AMD. Register as an anonymous module.
+      define(['jquery'], factory);
+  } else {
+      // Browser globals
+      factory(jQuery);
+  }
+}(function ($) {
 
-  var settings = $.extend({
-    stickyClass     : 'sticky',
-    headlineSelector: 'strong'
-  }, options);
+  $.fn.stickySectionHeaders = function(options) {
 
-  return $(this).each(function() {
-    var $this = $(this);
-    $(this).find('ul,ol').first().bind('scroll.sticky', function(e) {
-      $(this).find('> li').each(function() {
-        var $this      = $(this),
-            top        = $this.position().top,
-            height     = $this.outerHeight(),
-            $head      = $this.find(settings.headlineSelector),
-            headHeight = $head.outerHeight();
+    var settings = $.extend({
+      stickyClass     : 'sticky',
+      headlineSelector: 'strong'
+    }, options);
 
-        if (top < 0) {
-          $this.addClass(settings.stickyClass).css('paddingTop', headHeight);
-          $head.css({
-            'top'  : (height + top < headHeight) ? (headHeight - (top + height)) * -1 : '',
-            'width': $this.outerWidth() - $head.cssSum('paddingLeft', 'paddingRight')
-          });
-        } else {
-          $this.removeClass(settings.stickyClass).css('paddingTop', '');
-        }
+    return $(this).each(function() {
+      var $this = $(this);
+      $(this).find('ul,ol').first().bind('scroll.sticky', function(e) {
+        $(this).find('> li').each(function() {
+          var $this      = $(this),
+              top        = $this.position().top,
+              height     = $this.outerHeight(),
+              $head      = $this.find(settings.headlineSelector),
+              headHeight = $head.outerHeight();
+
+          if (top < 0) {
+            $this.addClass(settings.stickyClass).css('paddingTop', headHeight);
+            $head.css({
+              'top'  : (height + top < headHeight) ? (headHeight - (top + height)) * -1 : '',
+              'width': $this.outerWidth() - $head.cssSum('paddingLeft', 'paddingRight')
+            });
+          } else {
+            $this.removeClass(settings.stickyClass).css('paddingTop', '');
+          }
+        });
       });
     });
-  });
-};
+  };
 
-/* A little helper to calculate the sum of different
- * CSS properties
- *
- * EXAMPLE:
- * $('#my-div').cssSum('paddingLeft', 'paddingRight');
- */
-$.fn.cssSum = function() {
-  var $self = $(this), sum = 0;
-  $(arguments).each(function(i, e) {
-    sum += parseInt($self.css(e) || 0, 10);
-  });
-  return sum;
-};
+  /* A little helper to calculate the sum of different
+   * CSS properties
+   *
+   * EXAMPLE:
+   * $('#my-div').cssSum('paddingLeft', 'paddingRight');
+   */
+  $.fn.cssSum = function() {
+    var $self = $(this), sum = 0;
+    $(arguments).each(function(i, e) {
+      sum += parseInt($self.css(e) || 0, 10);
+    });
+    return sum;
+  };
+
+})
+);
