@@ -1,0 +1,78 @@
+<!doctype html>
+<html class="no-js" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<title>Sticky Section Headers example</title>
+
+	<link rel="stylesheet" href="example.css">
+</head>
+
+<body>
+
+	<div id="container">
+		<header>
+			<h1>Sticky Section Headers example</h1>
+		</header>
+		
+		<div id="sticky-list">
+			<ul>
+				<li>
+					<strong>Section Headline 1</strong>
+					<ul>
+						<li>Content line</li>
+						<li>Content line</li>
+						<li>Content line</li>
+						<li>Content line</li>
+					</ul>
+				</li>
+				<li>
+					<strong>Section Headline 2</strong>
+					<ul>
+						<li>Content line</li>
+						<li>Content line</li>
+					</ul>
+				</li>
+				<li>
+					<strong>Section Headline 4</strong>
+					<ul>
+						<li>Content line</li>
+						<li>Content line</li>
+						<li>Content line</li>
+						<li>Content line</li>
+						<li>Content line</li>
+						<li>Content line</li>
+						<li>Content line</li>
+						<li>Content line</li>
+					</ul>
+				</li>
+				<li>
+					<strong>Section Headline 5</strong>
+					<ul>
+						<li>Content line</li>
+						<li>Content line</li>
+						<li>Content line</li>
+						<li>Content line</li>
+						<li>Content line</li>
+						<li>Content line</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		
+	</div> <!-- eo #container -->
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="../src/jquery.stickysectionheaders.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+			$('#sticky-list').stickySectionHeaders({
+				stickyClass     : 'sticky',
+				headlineSelector: 'strong'
+			});
+		});
+  	</script>
+</body>
+</html>

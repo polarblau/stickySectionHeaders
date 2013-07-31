@@ -1,0 +1,67 @@
+body { 
+  background: #f9f9f9; 
+  color: #777; 
+  font-family: sans-serif; 
+}
+
+h1 { color: #333; }
+
+#container {
+  width: 85%;
+  max-width: 600px;
+  margin: 10% auto 0;
+}
+
+/* Reset some list defaults for all lists */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  text-indent: 1em;
+}
+
+/* The main container */
+#sticky-list  {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+
+  border: thin solid #ccc;
+  background: white;
+}
+
+/* The main list */
+#sticky-list > ul {
+  height: 100%;
+  overflow: auto;
+}
+
+/* Section headers, defined through "headlineSelector" */
+#sticky-list > ul > li strong {
+  font-weight: normal;
+  font-size: 1.1em;
+  color: #222;
+  background: #ccc;
+  display: block;
+  padding: 0.5em 0;
+  color: #fff;
+  text-shadow: 0px -1px 0px #000;
+  opacity: .75;
+  background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, #646262), color-stop(0.5, #484848), color-stop(0.5, #3D3D3D), color-stop(1, #4C4C4C) );
+  background-image: -moz-linear-gradient( center top, #646262 0%, #484848 50%, #3D3D3D 50%, #4C4C4C 100% );
+  background-image: linear-gradient( center top, #646262 0%, #484848 50%, #3D3D3D 50%, #4C4C4C 100% );
+}
+
+/* Section headers when "sticky", defined through "stickyClass" */
+#sticky-list > ul > li.sticky strong {
+  position: absolute;
+  top: 0;
+}
+
+ul ul li {
+  padding: 1em 0;
+  border-bottom: thin solid #ddd;
+}
