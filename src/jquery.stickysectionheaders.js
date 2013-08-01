@@ -36,7 +36,9 @@
           $list     = $(this).find('ul,ol').first(),
           $children = $list.find('> li');
 
-      $list.on('scroll', function(e) {
+      var handleResizeForChild
+
+      $list.on('scroll.sticky', function(e) {
         $children.each(function() {
           var $this      = $(this),
               top        = $this.position().top,
@@ -54,6 +56,10 @@
             $this.removeClass(settings.stickyClass).css('paddingTop', '');
           }
         });
+      });
+
+      $(window).on("resize", function() {
+
       });
     });
   };
