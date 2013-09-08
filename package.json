@@ -1,0 +1,27 @@
+{
+  "name": "stickySectionHeaders",
+  "version": "1.0.0",
+  "description": "Makes headers for sections in lists sticky. Known from the iPhone OS tables views.",
+  "keywords": [
+    "sticky section headers",
+    "persistant headers",
+    "iOS headers",
+    "scroll headers"
+  ],
+  "author": "Polarblau <info@polarblau.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/polarblau/stickySectionHeaders.git"
+  },
+  "main": "src/jquery.stickysectionheaders.js",
+  "jam": {
+    "main": "src/jquery.stickysectionheaders.js",
+    "include": ["src/jquery.stickysectionheaders.js"],
+    "dependencies": {
+      "jquery": ">=1.3"
+    },
+    "shim": {
+      "deps": ["jquery"]
+    }
+  }
+}
