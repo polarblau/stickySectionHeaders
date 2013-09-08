@@ -36,9 +36,14 @@
           $list     = $(this).find('ul,ol').first(),
           $children = $list.find('> li');
 
-      var handleResizeForChild
+      $children.each(function() {
+        $(this).data( "width", $(this).outerWidth() );
+        $(this).data( "pad", $(this).cssSum("paddingLeft", "paddingRight") );
+      });
 
       $list.on('scroll.sticky', function(e) {
+        var listTop = $list.scrollTop();
+
         $children.each(function() {
           var $this      = $(this),
               top        = $this.position().top,
@@ -50,16 +55,12 @@
             $this.addClass(settings.stickyClass).css('paddingTop', headHeight);
             $head.css({
               'top'  : (height + top < headHeight) ? (headHeight - (top + height)) * -1 : '',
-              'width': $this.outerWidth() - $head.cssSum('paddingLeft', 'paddingRight')
+              'width': $this.data("width") - $this.data("pad")
             });
           } else {
             $this.removeClass(settings.stickyClass).css('paddingTop', '');
           }
         });
-      });
-
-      $(window).on("resize", function() {
-
       });
     });
   };
